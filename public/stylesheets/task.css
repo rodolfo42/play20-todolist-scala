@@ -1,0 +1,91 @@
+html {
+  background-color: #F9F9F9;
+}
+
+body {
+  margin: 0 auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  background-color: #FFFFFF;
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    width: 980px;
+  }
+}
+
+.page-header {
+  background-color: #1399BD;
+}
+
+.page-header .header {
+  color: white;
+}
+
+.page-header .header small {
+  color: #E5E5E5;
+}
+
+.task-container {
+  max-height: 500px;
+  margin-bottom: 10px;
+  overflow: auto;
+}
+
+.task-container::-webkit-scrollbar {
+  width: 7px;
+  height: 10px;
+}
+
+.task-container::-webkit-scrollbar-button:start:decrement,
+.task-container::-webkit-scrollbar-button:end:increment  {
+  height: 5px;
+  display: block;
+  background-color: #DDD;
+}
+
+.task-container::-webkit-scrollbar-track-piece  {
+background-color: transparent;
+}
+
+.task-container::-webkit-scrollbar-thumb:vertical {
+height: 50px;
+background-color: #AAA;
+border: none;
+}
+
+.task-item {
+  background-color: #F5F5F5;
+  opacity: 0.4;
+  /*transition: opacity .2s ease-out;*/
+  overflow: hidden;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.task-item:hover {
+  opacity: 1;
+}
+
+.task-item .task-label {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  float: left;
+  font-weight: bold;
+  color: #222;
+}
+
+.task-item .task-action {
+  height: 30px;
+  float: right;
+}
+
+footer {
+  border-top: 1px solid #DDD;
+  background-color: #FAFAFA;
+  line-height: 20px;
+  font-size: 70%;
+  color: #AAA;
+  padding: 5px 10px;
+}

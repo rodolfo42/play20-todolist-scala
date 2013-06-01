@@ -1,0 +1,39 @@
+@(task: Task)
+
+@import helper._
+@import java.util._
+@import java.text._
+
+@dtFormat(date: Date) = @{
+  val fmt = new java.text.SimpleDateFormat("MM/dd/yyyy 'at' HH:mm")
+  fmt.format(date)
+}
+
+@main("Task details", "Task details") {
+  
+  <dl class="list-details">
+    <dt>
+      Label:
+    </dt>
+    <dd>
+      @task.label
+    </dd>
+    
+    <dt>
+      Created on:
+    </dt>
+    <dd>
+      @dtFormat(task.created)
+    </dd>
+  </dl>
+  
+  
+    <div class="left">
+      <a href="@routes.TaskController.tasks" class="button tiny">&laquo; back to list</a>
+    </div>
+    <div class="right">
+      @form(routes.TaskController.deleteTask(task.id)) {
+        <button class="alert tiny" type="submit">delete this task</button>
+      }
+    </div>
+}

@@ -1,0 +1,40 @@
+@(title: String, contentTitle: String)(content: Html)
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@title</title>
+        <meta name="viewport" content="max-width: device-width; initial-scale: 1.0" />
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("foundation/css/foundation.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/task.css")">
+        <script type="text/javascript" src="@routes.Assets.at("foundation/js/foundation.min.js")"></script>
+    </head>
+    <body>
+        <header class="row page-header">
+          <div class="large-12 columns">
+            <h1 class="header">
+              TaskControl
+                <small>Control your tasks</small>
+            </h1>
+          </div>
+        </header>
+        <div class="row">
+          <div class="large-8 columns">
+          <h2>@contentTitle</h2>
+            @content
+          </div>
+          
+          <aside class="large-4 columns">
+            <h2>Add a new task</h2>
+            <form action="@routes.TaskController.newTask" method="POST" class="panel">
+                <label>Label</label>
+                <input type="text" name="label" />
+                <button class="radius success expand" type="submit">Add task</button>
+            </div>
+          </aside>
+        </div>
+        <footer class="text-right">
+          by <a href="http://rodolfoferreira.com.br/" target="_blank">Rodolfo Ferreira</a>
+        </footer>
+    </body>
+</html>
