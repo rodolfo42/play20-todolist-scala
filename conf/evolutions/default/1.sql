@@ -5,7 +5,7 @@
 CREATE SEQUENCE task_id_seq;
 CREATE TABLE task (
     id integer NOT NULL DEFAULT nextval('task_id_seq'),
-    created DATETIME NOT NULL,
+    created timestamp NOT NULL,
     label varchar(255)
 );
  

@@ -37,9 +37,11 @@ object Task {
     val created = Calendar.getInstance().getTime
     val fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
     DB.withConnection { implicit c =>
-      SQL("insert into task (label, created) values ({label}, {created})").on(
-        'label -> label,
-        'created -> fmt.format(created)
+      SQL(
+      """
+        insert into task (label, created) values ({label}, '%s')
+      """.format(created)).on(
+        'label -> label
       ).executeUpdate()
     }
   }
